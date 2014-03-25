@@ -19,5 +19,6 @@ feature "Manage Items" do
     click_link("Show Item")
     expect(page).to have_content("Cheeseburger")
 
+
   end
 end

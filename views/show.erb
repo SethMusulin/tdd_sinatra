@@ -3,10 +3,12 @@
   <title>Awesome Foods</title>
 </head>
 <body>
-<h1>Show Item </h1>
-<%= ITEMS_LIST %>
+<h1><%= item %> </h1>
 <p>Stuff about the item</p>
-
-
+<form action="/items/<%= id %>" method="post">
+  <input type="hidden" name="_method" value="put">
+  <input type="text" name="item_name">
+  <input type="submit">
+</form>
 </body>
 </html>

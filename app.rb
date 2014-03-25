@@ -22,10 +22,10 @@ class App < Sinatra::Base
   end
 
   get '/show/:id' do
-    ITEMS_LIST
+   id = params[:id].to_i
+   item = ITEMS_LIST[id]
+    erb :show, :locals => {:id => id, :item => item}
   end
 end
 
-# Link goes to Show page √
-# Show page displays item name
-# Access the items in the array
+
