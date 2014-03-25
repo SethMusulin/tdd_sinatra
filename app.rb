@@ -2,14 +2,14 @@ require 'sinatra/base'
 
 class App < Sinatra::Base
 
-  set :all_items, ['List Item One']
+  ITEMS_LIST = []
 
   get '/' do
     erb :index
   end
 
   get '/items' do
-    erb :items, locals: {items: settings.all_items}
+    erb :items, locals: {items: ITEMS_LIST}
   end
 
   get '/items/new' do
@@ -17,7 +17,8 @@ class App < Sinatra::Base
   end
 
   post '/items' do
-    settings.all_items << params[:item_name]
+    ITEMS_LIST << params[:item_name]
     redirect "/items"
   end
 end
+

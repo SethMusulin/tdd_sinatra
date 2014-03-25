@@ -16,6 +16,7 @@ feature "Manage Items" do
     fill_in "item_name", with: "Cheeseburger"
     click_on "Create Item"
     expect(page).to have_content("Cheeseburger")
+    click_link("Show Item")
 
 
 
