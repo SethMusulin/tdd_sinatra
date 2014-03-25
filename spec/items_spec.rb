@@ -17,11 +17,9 @@ feature "Manage Items" do
     click_link "New Item"
     expect(page).to have_title("Awesome Foods New Item Form")
     page.fill_in "item_name", :with => "Gyros with Tatziki"
-
-
+    click_on "Submit"
+    expect(page).to have_content("Gyros with Tatziki")
 
   end
 end
 
-
-#page.fill_in 'item_name', :with => 'Channa Masala'
