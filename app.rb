@@ -1,6 +1,6 @@
 require 'sinatra/base'
 
-class App < Sinatra::Base
+class App < Sinatra::Application
 
   ITEMS_LIST = []
 
@@ -26,6 +26,19 @@ class App < Sinatra::Base
    item = ITEMS_LIST[id]
     erb :show, :locals => {:id => id, :item => item}
   end
+
+  get '/edit/:id' do
+    id = params[:id].to_i
+    item = ITEMS_LIST[id]
+    erb :edit, :locals => {:id => id, :item => item}
+  end
+
+  put '/show/:id' do
+    ITEMS_LIST[params[:id].to_i] = params[:item_name]
+    redirect '/items'
+  end
 end
+
+
 
 

@@ -6,7 +6,7 @@
 <h1>List of Items</h1>
 <ul>
   <% items.each_with_index do |item, id| %>
-    <li><%= item %> - <a href="/show/<%=id%>">Show Item</a></li>
+    <li><%= item %> - <a href="/show/<%= id %>">Show Item</a></li>
   <% end %>
 </ul>
 

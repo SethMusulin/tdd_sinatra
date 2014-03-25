@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<head>
+  <title>Awesome Foods</title>
+</head>
+<body>
+<h1><%= item %> </h1>
+
+<p>Edit Item</p>
+
+<form action="/show/<%= id %>" method="post">
+  <input type="hidden" name="_method" value="put">
+  <input type="text" name="item_name">
+  <input type="submit" value="Edit">
+</form>
+</body>
+</html>
+
+

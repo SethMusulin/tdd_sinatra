@@ -18,7 +18,16 @@ feature "Manage Items" do
     expect(page).to have_content("Cheeseburger")
     click_link("Show Item")
     expect(page).to have_content("Cheeseburger")
+    click_link("Edit Item")
+    fill_in "item_name", with: "Double Cheeseburger"
+    click_on "Edit"
+    expect(page).to have_content"Double Cheeseburger"
 
 
   end
 end
+
+
+# Edit item
+# replace old item with new item
+
