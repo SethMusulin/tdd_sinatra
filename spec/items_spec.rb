@@ -17,14 +17,7 @@ feature "Manage Items" do
     click_on "Create Item"
     expect(page).to have_content("Cheeseburger")
     click_link("Show Item")
-
-
-
-
-
-
-
-
+    expect(page).to have_content("Cheeseburger")
 
   end
 end

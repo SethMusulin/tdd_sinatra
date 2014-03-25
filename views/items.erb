@@ -5,11 +5,12 @@
 <body>
 <h1>List of Items</h1>
 <ul>
-  <% items.each do |item| %>
-    <li><%= item %><a href="./items/show">Show Item</a></li>
+  <% items.each_with_index do |item, id| %>
+    <li><%= item %> - <a href="/show/<%=id%>">Show Item</a></li>
   <% end %>
 </ul>
 
 <h3><a href="/items/new">Add New Item</h3>
 </body>
 </html>
+

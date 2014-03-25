@@ -18,7 +18,14 @@ class App < Sinatra::Base
 
   post '/items' do
     ITEMS_LIST << params[:item_name]
-    redirect "/items"
+    redirect '/items'
+  end
+
+  get '/show/:id' do
+    ITEMS_LIST
   end
 end
 
+# Link goes to Show page √
+# Show page displays item name
+# Access the items in the array
